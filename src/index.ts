@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-
+import { loadConfig } from './config';
 const program = new Command();
+const config = loadConfig();
+const token=config.githubToken || process.env.GITHUB_TOKEN;//example usage of config value
 
 program
   .name('issueflow')
